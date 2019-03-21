@@ -4,7 +4,7 @@ from pymongo.errors import DuplicateKeyError
 
 class MongoDB(object):
     def __init__(self):
-        self.client = pymongo.MongoClient(host='localhost', port=4567)
+        self.client =pymongo.MongoClient(host='localhost',port=27017)
         self.db = self.client['proxypool']
         self.proxies = self.db['proxies']
         self.proxies.ensure_index('proxy', unique=True)
